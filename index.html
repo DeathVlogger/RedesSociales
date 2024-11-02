@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos para el spinner */
+        .spinner {
+            width: 44px;
+            height: 44px;
+            animation: spinner-y0fdc1 2s infinite ease;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner > div {
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            border: 2px solid #ffffff;
+        }
+        .spinner div:nth-of-type(1) {
+            transform: translateZ(-22px) rotateY(180deg);
+        }
+        .spinner div:nth-of-type(2) {
+            transform: rotateY(-270deg) translateX(50%);
+            transform-origin: top right;
+        }
+        .spinner div:nth-of-type(3) {
+            transform: rotateY(270deg) translateX(-50%);
+            transform-origin: center left;
+        }
+        .spinner div:nth-of-type(4) {
+            transform: rotateX(90deg) translateY(-50%);
+            transform-origin: top center;
+        }
+        .spinner div:nth-of-type(5) {
+            transform: rotateX(-90deg) translateY(50%);
+            transform-origin: bottom center;
+        }
+        .spinner div:nth-of-type(6) {
+            transform: translateZ(22px);
+        }
+        @keyframes spinner-y0fdc1 {
+            0% {
+                transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+            }
+            50% {
+                transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+            }
+            100% {
+                transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+            }
+        }
+
+        /* Estilos para el contenido principal */
+        .container {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem;
+        }
+        .glass {
+            position: relative;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(0, 0, 0);
+            border: 1px solid rgba(75, 75, 75, 0.696);
+            box-shadow: 0 4px 6px rgba(153, 21, 248, 0.505);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .glass:hover {
+            transform: translateY(-10px);
+        }
+        .glass::before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+        svg {
+            fill: #c1c1c1;
+            width: 40px;
+            height: 40px;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* Ocultar contenido al inicio */
+        #content2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner inicial -->
+    <div id="content1" class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Contenido principal que aparece después del spinner -->
+    <div id="content2">
+        <div class="container">
+            <a href="https://www.twitch.tv/deathvlogger">
+                <div data-text="Twitch" class="glass">
+                    <svg viewBox="0 0 448 512">
+                        <path d="M391.2 103.5H352.5v109.7h38.6zM285 103H246.4V212.8H285zM120.8 0 24.3 91.4V420.6H140.1V512l96.5-91.4h77.3L487.7 256V0zM449.1 237.8l-77.2 73.1H294.6l-67.6 64v-64H140.1V36.6H449.1z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/@deathvlogger9390">
+                <div data-text="YouTube" class="glass">
+                    <svg viewBox="0 0 640 512">
+                        <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@death_vlogger?lang=es">
+                <div data-text="TikTok" class="glass">
+                    <svg viewBox="0 0 576 512">
+                        <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://discord.gg/FWRETGb4Eg">
+                <div data-text="Discord" class="glass">
+                    <svg viewBox="30 0 576 512">
+                        <path d="M524.5 69.8a1.5 1.5 0 0 0 -.8-.7A485.1 485.1 0 0 0 404.1 32a1.8 1.8 0 0 0 -1.9 .9 337.5 337.5 0 0 0 -14.9 30.6 447.8 447.8 0 0 0 -134.4 0 309.5 309.5 0 0 0 -15.1-30.6 1.9 1.9 0 0 0 -1.9-.9A483.7 483.7 0 0 0 116.1 69.1a1.7 1.7 0 0 0 -.8 .7C39.1 183.7 18.2 294.7 28.4 404.4a2 2 0 0 0 .8 1.4A487.7 487.7 0 0 0 176 479.9a1.9 1.9 0 0 0 2.1-.7A348.2 348.2 0 0 0 208.1 430.4a1.9 1.9 0 0 0 -1-2.6 321.2 321.2 0 0 1 -45.9-21.9 1.9 1.9 0 0 1 -.2-3.1 251.9 251.9 0 0 0 10.6-8.3 1.8 1.8 0 0 1 1.9-.3c96.2 44 200.8 44 295.8 0a1.8 1.8 0 0 1 1.9 .3 234.6 234.6 0 0 0 10.6 8.3 1.9 1.9 0 0 1 -.2 3.1 301.4 301.4 0 0 1 -46.1 21.9 1.9 1.9 0 0 0 -1 2.6 391.3 391.3 0 0 0 30 49.2 1.9 1.9 0 0 0 2.1 .7 484.2 484.2 0 0 0 147.7-74.1 1.9 1.9 0 0 0 .8-1.4c12-125.2-20.2-235.5-97.6-334.6zM196.4 354.6c-28.4 0-51.6-26.2-51.6-58.5s22.7-58.5 51.6-58.5c28.9 0 52.2 26.5 51.6 58.5.1 32.3-22.7 58.5-51.6 58.5zm182.8 0h-1.2c-28.4 0-51.6-26.2-51.6-58.5s22.7-58.5 51.6-58.5c28.9 0 52.2 26.5 51.6 58.5.1 32.3-22.7 58.5-51.6 58.5z"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+
+    <script>
+        // Esperar 5 segundos y luego cambiar al contenido principal
+        setTimeout(() => {
+            document.getElementById('content1').style.display = 'none';
+            document.getElementById('content2').style.display = 'block';
+        }, 5000); // 5 segundos
+    </script>
+</body>
+</html>
